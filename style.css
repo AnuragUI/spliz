@@ -1,0 +1,158 @@
+*{
+     margin: 0;
+    padding: 0; 
+     box-sizing: border-box;  
+}
+
+
+body{
+    background-color:#1A1A1A;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Distributes space between elements */
+    align-items: center; /* Aligns items vertically in the center */
+    padding-bottom: 30px; /* Optional: Add padding for spacing */
+}
+
+.Spliz {
+    color: #1A1A1A;
+    font-size: 2em;
+    display: flex;
+    align-items: center; /* Vertically center the text */
+}
+
+.me{
+    color:white
+}
+
+.biinstagram-icon {
+    height: 30px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: #FFC926;
+    margin: 0px auto;
+    color: white;
+/*     display: block; */
+    max-width: 420px; /* Maximum width for larger screens */  
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+
+
+
+textarea.hello {
+    border-radius: 18px;
+    padding: 10px; /* Ensure padding is consistent */
+    width: 100%; /* Full width of the container */
+    max-width: 100%; /* Prevent it from exceeding container width */
+    box-sizing: border-box; /* Includes padding and border in the width */
+    resize: vertical; /* Allow vertical resizing only */
+    overflow-y: auto; /* Scrollable if content overflows */
+    font-size: 16px; /* Ensure font size is visible */
+    color: #000; /* Text color */
+    background-color: #fff; /* Background color to make text readable */
+    border: 1px solid #ccc; /* Light border for visibility */
+}
+
+.word-count-message {
+    margin-left: 10px;
+    display: flex;
+    font-size: 0.9em;
+    color: #000; /* Black text color */
+    margin-top: 5px;
+}
+
+.word-count {
+    font-weight: bold;
+    color: white;
+}
+
+
+.content{
+    padding-left: 7%;
+    padding-right: 7%;
+
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.choose{
+    margin-top: 10%;
+    margin-bottom: 7%;
+    display: flex;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto; /* Pushes buttons to the bottom */
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the bottom right */
+    margin-top: 20px; /* Adds space above the buttons */
+}
+
+.reset-button {
+    width: 150px;
+    height: 45px;
+    background-color: #1A1A1A; /* Light gray background */
+    color: #ffffff; /* Dark gray text */
+     /*border: 1px solid #ccc; Gray border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for better size */
+    margin-right: 10px; /* Space between buttons */
+    cursor: pointer; /* Cursor pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.reset-button:hover {
+    background-color: #ff444400; /* Slightly darker gray on hover */
+    color: #000;
+}
+
+.submit-button {
+    width: 150px;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for better size */
+    cursor: pointer; /* Cursor pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+button:disabled {
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+
+.response-message {
+    color: red;
+    margin-top: 10px;
+}
