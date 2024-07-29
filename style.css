@@ -1,158 +1,306 @@
-*{
-     margin: 0;
-    padding: 0; 
-     box-sizing: border-box;  
-}
-
-
-body{
-    background-color:#1A1A1A;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    height: 100vh;
+* {
     margin: 0;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between; /* Distributes space between elements */
-    align-items: center; /* Aligns items vertically in the center */
-    padding-bottom: 30px; /* Optional: Add padding for spacing */
-}
-
-.Spliz {
-    color: #1A1A1A;
-    font-size: 2em;
-    display: flex;
-    align-items: center; /* Vertically center the text */
-}
-
-.me{
-    color:white
-}
-
-.biinstagram-icon {
-    height: 30px; /* Adjust height as needed */
-    width: auto; /* Maintain aspect ratio */
-}
-
-
-
-
-.main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 100vw;
-    max-height: 100vh;
-    background-color: #FFC926;
-    margin: 0px auto;
-    color: white;
-/*     display: block; */
-    max-width: 420px; /* Maximum width for larger screens */  
-    height: 100vh;
+    padding: 0;
     box-sizing: border-box;
 }
 
 
+body {
+    background-color: #1A1A1A;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main {
+    background-color: #FFC926;
+    max-width: 100vw;
+    max-height: 100vh;
+    max-width: 430px;
+    /* Maximum width for larger screens */
+    margin: 0px auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 35px rgba(255, 239, 59, 0.871);
+
+}
+
+.header {
+    display: flex;
+    padding-left: 25px;
+    padding-right: 10px;
+    justify-content: space-between;
+    /* Distributes space between elements */
+    align-items: center;
+    /* Aligns items vertically in the center */
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.Spliz {
+    font-family: 'Fugaz One';
+    color: #1A1A1A;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    /* Vertically center the text */
+}
+
+.me {
+    color: white;
+    text-shadow: 2px 2px #1A1A1A;
+}
+
+.biinstagram-icon {
+    height: 70px;
+    /* Adjust height as needed */
+    width: auto;
+    /* Maintain aspect ratio */
+}
+
+.content {
+    background-color: #1A1A1A;
+    height: calc(100vh - 100px);
+    width: 100%;
+    max-width: 430px;
+    position: relative;
+    border-radius: 60px 60px 0px 0px;
+
+    padding-top: 30px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.presents {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+}
+
+.vit {
+    margin-top: 20px;
+    margin-left: 7px;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    ;
+    font-size: 24px;
+
+}
+
+.vitunite-presents {
+    display: flex;
+    align-items: center;
+}
+
+
+.form {
+    margin-top: 28px;
+    margin-left: 12px;
+    margin-right: 30px;
+}
+
+
+
+/* General container for radio buttons */
+.radio-container {
+    display: flex;
+    gap: 30px;
+}
+
+/* Style for each radio button container */
+.radio-button {
+    display: flex;
+    align-items: center;
+    background-color: #1A1A1A;
+    color: #f4f4f4;
+    border: 1.5px solid rgb(88, 88, 88);
+    border-radius: 8px;
+    height: 45px;
+    width: 140px;
+    text-align: center;
+    padding-left: 12px;
+    padding-right: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Hide default radio button */
+.radio-button input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    /* Hide the default radio button */
+    width: 0;
+    height: 0;
+}
+
+/* Style the custom radio button */
+.radio-button input[type="radio"]+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Custom radio button appearance */
+.radio-button input[type="radio"]+label::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    /* Adjust for positioning */
+    transform: translateY(-50%);
+    width: 16px;
+    /* Size of the custom radio button */
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    /* Default color */
+    border: 2px solid #FFC926;
+    /* Default border color */
+}
+
+/* Change color when radio button is checked */
+.radio-button input[type="radio"]:checked+label::before {
+    background: #FFC926;
+    /* Change color when checked */
+    border: 2px solid #ffffff;
+}
+
+/* Adjust label text */
+.radio-button label {
+    padding-left: 35px;
+    /* Adjust to make room for radio button */
+}
 
 
 textarea.hello {
-    border-radius: 18px;
-    padding: 10px; /* Ensure padding is consistent */
-    width: 100%; /* Full width of the container */
-    max-width: 100%; /* Prevent it from exceeding container width */
-    box-sizing: border-box; /* Includes padding and border in the width */
-    resize: vertical; /* Allow vertical resizing only */
-    overflow-y: auto; /* Scrollable if content overflows */
-    font-size: 16px; /* Ensure font size is visible */
-    color: #000; /* Text color */
-    background-color: #fff; /* Background color to make text readable */
-    border: 1px solid #ccc; /* Light border for visibility */
+    margin-top: 16px;
+    border-radius: 12px;
+    height: 270px;
+    padding: 20px;
+    width: 100%;
+    /* Full width of the container */
+    max-width: 100%;
+    /* Prevent it from exceeding container width */
+    box-sizing: border-box;
+    /* Includes padding and border in the width */
+    resize: vertical;
+    /* Allow vertical resizing only */
+    overflow-y: auto;
+    /* Scrollable if content overflows */
+    font-size: 16px;
+    color: #ffffff;
+    /* Text color */
+    background-color: #ffffff06;
+    border: 1px solid #606060;
 }
+
 
 .word-count-message {
-    margin-left: 10px;
-    display: flex;
-    font-size: 0.9em;
-    color: #000; /* Black text color */
+    font-size: 14px;
+    font-family: montserrat;
+    color: rgb(115, 115, 115);
     margin-top: 5px;
+    margin-left: auto;
+    /* Automatically adjust left margin */
+    margin-right: 0;
+    /* Remove right margin */
+    display: block;
+    text-align: left;
+    width: 100%;
+    font-weight: normal;
 }
 
-.word-count {
-    font-weight: bold;
-    color: white;
-}
-
-
-.content{
-    padding-left: 7%;
-    padding-right: 7%;
-
-    padding-top: 7%;
-    padding-bottom: 7%;
-}
-
-.choose{
-    margin-top: 10%;
-    margin-bottom: 7%;
-    display: flex;
+textarea.hello~.word-count-message {
+    color: rgb(115, 115, 115);
 }
 
 .button {
     display: flex;
     justify-content: space-between;
-    margin-top: auto; /* Pushes buttons to the bottom */
+    /* Space between buttons */
+    margin-top: 20px;
+    /* Space above the button container */
+    margin-bottom: 30px;
+    /* Margin from the bottom of the form */
 }
 
-.button-container {
-    display: flex;
-    justify-content: flex-end; /* Aligns buttons to the bottom right */
-    margin-top: 20px; /* Adds space above the buttons */
-}
-
+.submit-button,
 .reset-button {
     width: 150px;
-    height: 45px;
-    background-color: #1A1A1A; /* Light gray background */
-    color: #ffffff; /* Dark gray text */
-     /*border: 1px solid #ccc; Gray border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding for better size */
-    margin-right: 10px; /* Space between buttons */
-    cursor: pointer; /* Cursor pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
-}
-
-.reset-button:hover {
-    background-color: #ff444400; /* Slightly darker gray on hover */
-    color: #000;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    /* Adjust padding for button size */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transition */
 }
 
 .submit-button {
-    width: 150px;
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding for better size */
-    cursor: pointer; /* Cursor pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
+    color: #1A1A1A;
+    background-color: #FFC926;
+    /* Yellow background for submit button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add shadow */
 }
 
 .submit-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #e0a800;
+    /* Darker yellow on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Increase shadow on hover */
 }
 
-button:disabled {
-    background-color: #e0e0e0;
-    color: #a0a0a0;
+.reset-button {
+    border: 1px solid #606060;
+    background-color: #1A1A1A;
+    /* Red background for reset button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add shadow */
+}
+
+.reset-button:hover {
+    background-color: #5d5d5d;
+    /* Darker red on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Increase shadow on hover */
+}
+
+.submit-button:disabled {
     cursor: not-allowed;
+    /* Change cursor to 'not-allowed' when button is disabled */
+    opacity: 0.5;
+    /* Optional: Change opacity to give a visual cue */
 }
 
+.popup-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFC926;
+    color: #1A1A1A;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    margin: 20px 0;
+}
 
-.response-message {
-    color: red;
-    margin-top: 10px;
+.popup-link {
+    color: #1A1A1A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.popup-link:hover {
+    text-decoration: underline;
 }
