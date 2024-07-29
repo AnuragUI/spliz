@@ -108,6 +108,7 @@ body {
 
 /* Style for each radio button container */
 .radio-button {
+    font-family: cabin;
     display: flex;
     align-items: center;
     background-color: #1A1A1A;
