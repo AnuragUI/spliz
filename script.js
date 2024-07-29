@@ -1,4 +1,4 @@
-/* // Disable right-click
+// Disable right-click
 document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
 });
@@ -36,35 +36,30 @@ const observer = new MutationObserver((mutations) => {
 
 observer.observe(document, { childList: true, subtree: true });
 
- */
-
-document.addEventListener('DOMContentLoaded', function() {
-    const textarea = document.getElementById('responseInput');
-    const wordCountMessage = document.getElementById('wordCountMessage');
-    const maxCharacters = 300;
-
-    function updateCharacterCount() {
-        const text = textarea.value;
-        const characterCount = text.length;
-
-        if (characterCount > maxCharacters) {
-            textarea.value = text.slice(0, maxCharacters); // Trims text to max length
-        }
-
-        const remainingCharacters = maxCharacters - characterCount;
-        wordCountMessage.innerHTML = `${remainingCharacters}`;
-        wordCountMessage.style.color = remainingCharacters < 0 ? 'red' : 'black';
-    }
-
-    textarea.addEventListener('input', updateCharacterCount);
-});
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('myForm');
     const submitButton = document.getElementById('submitButton');
     const responseInput = document.getElementById('responseInput');
     const wordCountMessage = document.getElementById('wordCountMessage');
+    const responseMessage = document.getElementById('responseMessage');
+    const radioButtons = document.querySelectorAll('input[name="hostel"]');
+    const buttonContainer = document.querySelector('.button');
+    const redirectLink = 'https://www.instagram.com/vitunite/'; // Change this to your Instagram link
+
+    const maxCharacters = 300;
+
+    function updateCharacterCount() {
+        const text = responseInput.value;
+        const characterCount = text.length;
+
+        if (characterCount > maxCharacters) {
+            responseInput.value = text.slice(0, maxCharacters); // Trims text to max length
+        }
+
+        const remainingCharacters = maxCharacters - characterCount;
+        wordCountMessage.innerHTML = `${remainingCharacters}`;
+        wordCountMessage.style.color = remainingCharacters < 0 ? 'red' : 'grey';
+    }
 
     function updateSubmitButtonState() {
         const isRadioChecked = form.querySelector('input[name="hostel"]:checked');
@@ -72,44 +67,67 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.disabled = !(isRadioChecked && isTextAreaFilled);
     }
 
-    // Event listeners for form elements
+    function showPopupMessage() {
+        buttonContainer.style.display = 'none'; // Hide the original buttons
+        responseMessage.innerHTML = `
+            <div class="popup-message">
+                <a href="${redirectLink}" class="popup-link" target="_blank">Submitted! Visit Instagram.</a>
+            </div>
+        `;
+        responseMessage.style.display = 'block';
+
+        setTimeout(function() {
+            window.location.href = redirectLink; // Redirect after 6 seconds
+        }, 6000);
+    }
+
     form.addEventListener('input', updateSubmitButtonState);
     form.addEventListener('change', updateSubmitButtonState);
 
-    // Character limit for textarea
-    responseInput.addEventListener('input', function() {
-        const maxLength = 300;
-        const currentLength = responseInput.value.length;
-        wordCountMessage.textContent = `${maxLength - currentLength}`;
-    });
+    responseInput.addEventListener('input', updateCharacterCount);
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // If the form is valid, submit it
-        if (submitButton.disabled) return;
+        const isRadioChecked = form.querySelector('input[name="hostel"]:checked');
+        const isTextAreaFilled = responseInput.value.trim() !== '';
 
-        // Disable the submit button while waiting for the response
-        submitButton.disabled = true;
+        if (!isRadioChecked) {
+            // Highlight the radio buttons if none is checked
+            document.querySelectorAll('.radio-button').forEach(btn => btn.style.borderColor = 'red');
+        } else {
+            document.querySelectorAll('.radio-button').forEach(btn => btn.style.borderColor = 'rgb(211, 211, 211)');
+        }
 
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-        })
-        .then(response => {
-            submitButton.disabled = false;
+        if (!isTextAreaFilled) {
+            // Highlight the textarea if it's empty
+            responseInput.style.borderColor = 'red';
+        } else {
+            responseInput.style.borderColor = '#606060'; // Reset the border color
+        }
 
-            if (response.ok) {
-                document.getElementById('responseMessage').textContent = 'Your message has been sent successfully!';
-                form.reset();
-            } else {
-                document.getElementById('responseMessage').textContent = 'There was a problem sending your message. Please try again.';
-            }
-        })
-        .catch(error => {
-            submitButton.disabled = false;
-            document.getElementById('responseMessage').textContent = 'There was a problem sending your message. Please try again.';
-        });
+        if (isRadioChecked && isTextAreaFilled) {
+            // If everything is valid, proceed with form submission
+            submitButton.disabled = true; // Disable submit button
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+            })
+            .then(response => {
+                submitButton.disabled = false;
+                if (response.ok) {
+                    showPopupMessage(); // Show the popup message and redirect
+                } else {
+                    responseMessage.textContent = 'There was a problem sending your message. Please try again.';
+                }
+            })
+            .catch(error => {
+                submitButton.disabled = false;
+                responseMessage.textContent = 'There was a problem sending your message. Please try again.';
+            });
+        }
     });
-});
 
+    // Initial update of the character count
+    updateCharacterCount();
+});
