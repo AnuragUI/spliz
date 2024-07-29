@@ -6,69 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spliz.me</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fugaz One:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" />
 </head>
 
 <body>
-    <div class="main">
+    <div class="main"><!--at center-->
+        <!--header-->
+        <div class="header">
+            <div class="Spliz">
+                <Span>Spliz.</Span>
+                <span class="me">me</span>
+            </div>
+            <a href="https://www.instagram.com/vitunite/"><img class="biinstagram-icon" alt=""
+                    src="bi_instagram.svg"></a>
+        </div>
+
         <div class="content">
-            <div class="header">
-                <div class="Spliz">
-                    <Span>Spliz.</Span>
-                    <span class="me">me</span>
-                </div>
-                <img class="biinstagram-icon" alt="" src="bi_instagram.svg">
-            </div>
-
-            <div class="white">
-                <div class="VITunite">
-                    <p class="vitunite">VITUNITE presents ,</p>
-                    <p class="event">sakala boom boom.</p>
-                </div>
-
-
-                <div class="form" >
-
-                    <form id="myForm" action="https://api.web3forms.com/submit" method="post">
-                        <input type="hidden" name="access_key" value="f7b94b00-6215-4e70-a6a8-a68fab074783">
-
-                            <div class="choose">
-                                <div class="boys button">
-                                    <p>
-                                    <input type="radio" name="hostel" id="Boys" value="Boys" required>
-                                    <label for="Boys">Boys H.</label>
-                                </p>
-                            </div>
-
-                            <div class="buttons">
-                                <p>
-                                    <input type="radio" name="hostel" id="Girls" value="Girls">
-                                    <label for="Girls">Girls H.</label>
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <textarea name="message" id="responseInput" cols="55" rows="15" class="hello"
-                            placeholder="type your message here" autocomplete="on" required
-                            spellcheck="true">
-                        </textarea>
-
-                        <p id="wordCountMessage" class="word-count-message">300</p>
-
-                        <div class="button">
-                            
-                            <button type="reset"class="reset-button">Clear</button>
-                            <button type="submit" id="submitButton" class="submit-button">Post It!</button>
-                        </div>
-
-                        <div id="responseMessage" class="response-message"></div>
-
-                    </form>
+            <div class="presents">
+                <img src="star.gif" alt="Star gif" height="50px" width="50px">
+                <div class="vit">
+                    <p class="vitunite-presents">VIT Unite Presents :</p>
+                    <p class="vitunite-presents">Hostel Whispers </p>
                 </div>
             </div>
+
+            <div class="form">
+
+                <form id="myForm" action="https://api.web3forms.com/submit" method="post">
+                    <input type="hidden" name="access_key" value="f7b94b00-6215-4e70-a6a8-a68fab074783">
+
+                    <div class="radio-container">
+                        <div class="radio-button boys">
+                            <input type="radio" name="hostel" id="Boys" value="Boys" required>
+                            <label for="Boys">Boys</label>
+                        </div>
+                        <div class="radio-button girls">
+                            <input type="radio" name="hostel" id="Girls" value="Girls">
+                            <label for="Girls">Girls</label>
+                        </div>
+                    </div>
+
+                    <textarea name="message" id="responseInput" cols="55" rows="15" class="hello" autocomplete="on"
+                        required spellcheck="true" placeholder="Here" autofocus></textarea>
+
+                    <p id="wordCountMessage" class="word-count-message">300</p>
+
+                    <div class="button">
+                        <button type="reset" class="reset-button">Clear</button>
+                        <button type="submit" id="submitButton" class="submit-button" disabled>Post It!</button>
+                    </div>
+
+                    <div id="responseMessage" class="response-message"></div>
+                    <div id="responseMessage" class="response-message" style="display: none;"></div>
+                </form>
+            </div>
+
         </div>
     </div>
-        <script src="script.js"></script>
-    
+    <script src="script.js"></script>
 </body>
 
 </html>
