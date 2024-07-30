@@ -24,6 +24,172 @@ body {
 
 }
 
+.footer{
+    font-family: cabin,sans-serif;
+    font-weight:500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    bottom: 0%;
+    transform: translate(-50%);
+    left: 50%;
+    width: 100;
+    margin-bottom: 25px;
+    
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+}
+
+.footer p {
+    margin: 0;
+    text-align: center; /* Center text alignment */
+}
+
+.footer img {
+    vertical-align: middle; /* Align icon with text vertically */
+    margin-left: 5px; /* Space between text and icon */
+    margin-bottom: 5px;
+    height: 20px; /* Adjust size of the icon */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.uncover-the-fun-container{
+    font-family: roboto;
+    font-size: 32px;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%);
+    max-width: 430px;
+    top: 35%;
+    left: 50%;
+    width: 100%;
+    max-width: 430px;
+    box-sizing: border-box;
+    transition: transform 0.8s ease;
+}
+
+/* Hidden and visible states with animation */
+.uncover-the-fun-container.hidden {
+    animation: slide-up 0.8s forwards;
+}
+
+.uncover-the-fun-container.visible {
+    animation: slide-down 0.8s forwards;
+}
+
+
+
+
+/* Define slide-down animation */
+@keyframes slide-down {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Define slide-up animation */
+@keyframes slide-up {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+
+.uncover-the-fun-in{
+    margin: 0; /* Remove default margin */
+    padding: 0;
+}
+
+/* Container for the typing animation */
+.splizme2 {
+    display: inline-block;
+    font-style: italic;
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent line breaks */
+    border-right: 2px solid #333; /* Cursor effect */
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #333; /* Cursor color */
+    }
+}
+
+.typing {
+    animation: typing 3s steps(80, end) normal both, blink-caret 0.75s step-end infinite;
+}
+
+/* Styles for the Get Started button container */
+.get-started-container {
+    display: none;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: fixed;
+    
+    bottom: 35%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Full width to ensure it's centered */
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Styles for the Get Started button */
+.get-started-container p {
+    
+    background-color: #ffffff; /* Yellow background */
+    color: #1A1A1A; /* Dark text color */
+    padding: 15px 30px; /* Padding for button appearance */
+    border-radius: 8px; /* Rounded corners */
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for the button */
+.get-started-container p:hover {
+    background-color: #1A1A1A; /* Darker yellow on hover */
+    color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+
 .header {
     display: flex;
     padding-left: 25px;
@@ -63,17 +229,70 @@ body {
     width: 100%;
     max-width: 430px;
     
-    position: relative;
+    position: relative; /* Allow absolute positioning of child elements */
     border-radius: 60px 60px 0px 0px;
 
     padding-top: 30px;
     padding-left: 20px;
     overflow: hidden;
+    transition: transform 0.5s ease;
+    transform: translateY(0);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+.hidden {
+    animation: slide-down 0.8s forwards;
+}
+
+/* Show content with slide-up animation */
+.visible {
+    animation: slide-up 0.8s forwards;
+}
+
+/* Define slide-down animation */
+@keyframes slide-down {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+/* Define slide-up animation */
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.rect{
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    
+    justify-content: center;
+    
+    display: flex;
+    position: fixed;
+
+    cursor: pointer;
+    z-index: 1000;
+}
+
 
 .presents {
     display: flex;
@@ -189,7 +408,7 @@ textarea.hello {
     font-family: cabin;
     margin-top: 16px;
     border-radius: 12px;
-    height: 270px;
+    height: 45%;
     padding: 20px;
     width: 100%;
     /* Full width of the container */
