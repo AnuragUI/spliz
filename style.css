@@ -171,8 +171,8 @@ body {
 /* Styles for the Get Started button */
 .get-started-container p {
     
-    background-color: #ffffff; /* Yellow background */
-    color: #1A1A1A; /* Dark text color */
+    background-color: #1A1A1A; /* Yellow background */
+    color: #ffffff; /* Dark text color */
     padding: 15px 30px; /* Padding for button appearance */
     border-radius: 8px; /* Rounded corners */
     font-family: Montserrat, sans-serif;
@@ -184,8 +184,8 @@ body {
 
 /* Hover effect for the button */
 .get-started-container p:hover {
-    background-color: #1A1A1A; /* Darker yellow on hover */
-    color: #ffffff;
+    background-color: #ffffff; /* Darker yellow on hover */
+    color: #1A1A1A;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
 }
 
