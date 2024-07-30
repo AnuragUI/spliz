@@ -131,3 +131,45 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial update of the character count
     updateCharacterCount();
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const rect = document.querySelector('.rect');
+    const content = document.querySelector('.content');
+    const getStartedContainer = document.querySelector('.get-started-container');
+    const splizme2 = document.querySelector('.splizme2'); // Ensure this is selected
+
+    function restartTypingAnimation() {
+        splizme2.classList.remove('typing'); // Remove the class to reset the animation
+        void splizme2.offsetWidth; // Trigger reflow
+        splizme2.classList.add('typing'); // Add the class to restart the animation
+    }
+
+    function startTypingEffect() {
+        restartTypingAnimation();
+        setInterval(restartTypingAnimation, 8000); // Restart every 8 seconds (adjust if needed)
+    }
+
+    rect.addEventListener('click', function() {
+        content.classList.remove('visible');
+        content.classList.add('hidden');
+
+        setTimeout(function() {
+            getStartedContainer.style.display = 'flex';
+        }, 800); // Match the duration of the slide-down animation
+    });
+
+    getStartedContainer.addEventListener('click', function() {
+        getStartedContainer.style.display = 'none';
+
+        content.classList.remove('hidden');
+        content.classList.add('visible');
+    });
+
+    startTypingEffect(); // Start typing effect on load
+});
+
+
+
+
+
