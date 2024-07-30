@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     getStartedContainer.addEventListener('click', function() {
-        getStartedContainer.style.display = 'none';
+        
 
         content.classList.remove('hidden');
         content.classList.add('visible');
