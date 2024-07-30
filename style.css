@@ -20,25 +20,25 @@ body {
     /* Maximum width for larger screens */
     margin: 0px auto;
     box-sizing: border-box;
-    box-shadow: 0 0 35px rgba(255, 239, 59, 0.871);
+    box-shadow: 0 0 35px rgba(255, 226, 59, 0.871);
 
 }
 
-.footer{
-    font-family: cabin,sans-serif;
-    font-weight:500;
+.footer {
+    font-family: cabin, sans-serif;
+    font-weight: 500;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     position: absolute;
     bottom: 0%;
     transform: translate(-50%);
     left: 50%;
-    width: 100;
+    width: 100%;
     margin-bottom: 25px;
-    
+
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -47,22 +47,27 @@ body {
 
 .footer p {
     margin: 0;
-    text-align: center; /* Center text alignment */
+    text-align: center;
+    /* Center text alignment */
 }
 
 .footer img {
-    vertical-align: middle; /* Align icon with text vertically */
-    margin-left: 5px; /* Space between text and icon */
+    vertical-align: middle;
+    /* Align icon with text vertically */
+    margin-left: 5px;
+    /* Space between text and icon */
     margin-bottom: 5px;
-    height: 20px; /* Adjust size of the icon */
-    width: auto; /* Maintain aspect ratio */
+    height: 20px;
+    /* Adjust size of the icon */
+    width: auto;
+    /* Maintain aspect ratio */
 }
 
-.uncover-the-fun-container{
+.uncover-the-fun-container {
     font-family: roboto;
     font-size: 32px;
     display: flex;
-    
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -87,36 +92,9 @@ body {
     animation: slide-down 0.8s forwards;
 }
 
-
-
-
-/* Define slide-down animation */
-@keyframes slide-down {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Define slide-up animation */
-@keyframes slide-up {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-}
-
-
-.uncover-the-fun-in{
-    margin: 0; /* Remove default margin */
+.uncover-the-fun-in {
+    margin: 0;
+    /* Remove default margin */
     padding: 0;
 }
 
@@ -124,9 +102,12 @@ body {
 .splizme2 {
     display: inline-block;
     font-style: italic;
-    overflow: hidden; /* Hide overflow text */
-    white-space: nowrap; /* Prevent line breaks */
-    border-right: 2px solid #333; /* Cursor effect */
+    overflow: hidden;
+    /* Hide overflow text */
+    white-space: nowrap;
+    /* Prevent line breaks */
+    border-right: 2px solid #333;
+    /* Cursor effect */
 }
 
 /* Typing effect */
@@ -134,6 +115,7 @@ body {
     from {
         width: 0;
     }
+
     to {
         width: 100%;
     }
@@ -141,11 +123,15 @@ body {
 
 /* Blinking cursor effect */
 @keyframes blink-caret {
-    from, to {
+
+    from,
+    to {
         border-color: transparent;
     }
+
     50% {
-        border-color: #333; /* Cursor color */
+        border-color: #333;
+        /* Cursor color */
     }
 }
 
@@ -155,38 +141,59 @@ body {
 
 /* Styles for the Get Started button container */
 .get-started-container {
-    display: none;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
     position: fixed;
-    
-    bottom: 35%; /* Adjust as needed */
+
+    bottom: 35%;
+    /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%);
-    width: 100%; /* Full width to ensure it's centered */
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it stays on top */
+    width: 100%;
+    /* Full width to ensure it's centered */
+    display: none;
+    /* Initially hidden */
+    z-index: 1000;
+    /* Ensure it stays on top */
+    transition: opacity 0.4s ease, visibility 0s ease;
 }
 
 /* Styles for the Get Started button */
 .get-started-container p {
-    
-    background-color: #1A1A1A; /* Yellow background */
-    color: #ffffff; /* Dark text color */
-    padding: 15px 30px; /* Padding for button appearance */
-    border-radius: 8px; /* Rounded corners */
+
+    background-color: #1A1A1A;
+    /* Yellow background */
+    color: #ffffff;
+    /* Dark text color */
+    padding: 15px 30px;
+    /* Padding for button appearance */
+    border-radius: 8px;
+    /* Rounded corners */
     font-family: Montserrat, sans-serif;
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add shadow */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transition */
+}
+
+.get-started-container.visible {
+    opacity: 1;
+    visibility: visible;
+
 }
 
 /* Hover effect for the button */
 .get-started-container p:hover {
-    background-color: #ffffff; /* Darker yellow on hover */
+    background-color: #ffffff;
+    /* Darker yellow on hover */
     color: #1A1A1A;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Increase shadow on hover */
 }
 
 
@@ -198,8 +205,9 @@ body {
     /* Distributes space between elements */
     align-items: center;
     /* Aligns items vertically in the center */
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+
 }
 
 .Spliz {
@@ -223,15 +231,23 @@ body {
     /* Maintain aspect ratio */
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Full viewport height */
+}
+
 .content {
-    z-index:2000;
+    z-index: 2000;
     background-color: #1A1A1A;
-    height: calc(100vh - 100px);
+    flex: 1;
     width: 100%;
     max-width: 430px;
-    
-    position: relative; /* Allow absolute positioning of child elements */
-    border-radius: 60px 60px 0px 0px;
+
+    position: relative;
+    /* Allow absolute positioning of child elements */
+    border-radius: 50px 50px 0px 0px;
 
     padding-top: 30px;
     padding-left: 20px;
@@ -259,6 +275,7 @@ body {
         transform: translateY(0);
         opacity: 1;
     }
+
     to {
         transform: translateY(100%);
         opacity: 0;
@@ -271,6 +288,7 @@ body {
         transform: translateY(100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -278,15 +296,15 @@ body {
 }
 
 
-.rect{
+.rect {
     position: absolute;
     top: 18px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    
+
     justify-content: center;
-    
+
     display: flex;
     position: fixed;
 
@@ -322,7 +340,8 @@ body {
     margin-left: 12px;
     margin-right: 30px;
 
-    flex: 1; /* Allow the form to grow and fill available space */
+    flex: 1;
+    /* Allow the form to grow and fill available space */
     display: flex;
     flex-direction: column;
 }
@@ -351,6 +370,7 @@ body {
     padding-right: 20px;
     position: relative;
     cursor: pointer;
+    transition: border-color 0.3s;
 }
 
 /* Hide default radio button */
@@ -388,7 +408,6 @@ body {
     background: white;
     /* Default color */
     border: 2px solid #FFC926;
-    /* Default border color */
 }
 
 /* Change color when radio button is checked */
@@ -397,6 +416,12 @@ body {
     /* Change color when checked */
     border: 2px solid #ffffff;
 }
+
+.radio-button input[type="radio"]:checked~.radio-button {
+    border-color: #FFC926;
+}
+
+
 
 /* Adjust label text */
 .radio-button label {
@@ -455,22 +480,22 @@ textarea.hello~.word-count-message {
     text-align: center;
     gap: 30px;
     /* Space between buttons */
-    
+
     /* Space above the button container */
     margin-bottom: 30px;
     /* Margin from the bottom of the form */
     position: sticky;
     bottom: 0;
     padding: 0 0px;
-    
+
 }
 
 .submit-button,
 .reset-button {
-    
+
     width: 100%;
-    
-    max-width:150px ;
+
+    max-width: 150px;
     margin-top: 40px;
     height: 45px;
     margin-bottom: 10px;
@@ -488,7 +513,7 @@ textarea.hello~.word-count-message {
 
 .submit-button {
     color: #1A1A1A;
-    
+
     background-color: #FFC926;
     /* Yellow background for submit button */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -527,7 +552,7 @@ textarea.hello~.word-count-message {
 .popup-message {
     display: flex;
     text-align: center;
-    
+
     height: 50px;
     flex-direction: column;
     align-items: center;
