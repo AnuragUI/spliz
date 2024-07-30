@@ -186,6 +186,7 @@ body {
 
 
 textarea.hello {
+    font-family: cabin;
     margin-top: 16px;
     border-radius: 12px;
     height: 270px;
