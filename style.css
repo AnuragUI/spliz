@@ -224,6 +224,7 @@ body {
 }
 
 .content {
+    z-index:2000;
     background-color: #1A1A1A;
     height: calc(100vh - 100px);
     width: 100%;
