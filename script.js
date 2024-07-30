@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         setTimeout(function() {
             getStartedContainer.style.display = 'flex';
-        }, 800); // Match the duration of the slide-down animation
+        }, 200); // Match the duration of the slide-down animation
     });
 
     getStartedContainer.addEventListener('click', function() {
